@@ -2,4 +2,8 @@ FROM node:latest
 
 EXPOSE 12345
 
-CMD["node", "index.js"]
+COPY . /src
+
+RUN cd /src; npm install
+
+CMD["node", "/src/index.js"]
